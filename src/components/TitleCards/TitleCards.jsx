@@ -4,7 +4,7 @@ import cards_data from '../../assets/cards/Cards_data'
 
 
 
-const TitleCards = ({title, category}) => {
+const TitleCards = ({title}) => {
   const cardsRef = useRef();
 
   const handleWheel = (event) => {
