@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Player.css'
 import back_arrow_icon from '../../assets/back_arrow_icon.png'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Player = () => {
 
@@ -12,6 +12,7 @@ const Player = () => {
     published_at: ""
   });
 
+  const navigate = useNavigate();
   const {id} = useParams();
 
   useEffect(() => {
@@ -29,9 +30,16 @@ const Player = () => {
     }
   };
 
+  function handleBackArrow() {
+    navigate(-1);
+  }
+
   return (
     <div className='player'>
-      <img src={back_arrow_icon} alt="Back" />
+      <img 
+      src={back_arrow_icon} 
+      alt="Back"
+      onClick={handleBackArrow} />
       <iframe
         src={`https://www.youtube.com/embed/${apiData.key}`}
         frameborder="0"
