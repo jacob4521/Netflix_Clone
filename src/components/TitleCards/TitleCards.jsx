@@ -17,7 +17,6 @@ const TitleCards = ({ title, category }) => {
   };
 
   const handleWheel = (event) => {
-    console.log(event)
     event.preventDefault();
     cardsRef.current.scrollLeft += event.deltaY;
   }
